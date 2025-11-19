@@ -22,5 +22,7 @@ namespace Celeste.Mod.ProgrammaticInput.Nodes
 		{
 			PreviousState = CurrentState;
 		}
+
+		public static implicit operator bool(ButtonPress b) => b.CurrentState;
 	}
 }

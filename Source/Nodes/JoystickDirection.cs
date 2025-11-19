@@ -12,5 +12,7 @@ namespace Celeste.Mod.ProgrammaticInput.Nodes
 		public Vector2 CurrentDirection;
 
 		public override Vector2 Value => CurrentDirection;
+
+		public static implicit operator Vector2(JoystickDirection j) => j.Value;
 	}
 }

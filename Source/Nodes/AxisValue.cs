@@ -10,6 +10,8 @@ namespace Celeste.Mod.ProgrammaticInput.Nodes
 		public abstract Vector2 VectorValue { set; }
 
 		public override float Value => CurrentValue;
+
+		public static implicit operator float(AxisValue a) => a.Value;
 	}
 
 	/// <summary>
