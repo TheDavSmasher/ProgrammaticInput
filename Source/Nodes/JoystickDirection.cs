@@ -9,8 +9,8 @@ namespace Celeste.Mod.ProgrammaticInput.Nodes
 	/// </summary>
 	public class JoystickDirection : VirtualJoystick.Node
 	{
-		public Vector2 CurrentDecision;
+		public Vector2 CurrentDirection;
 
-		public override Vector2 Value => CurrentDecision;
+		public override Vector2 Value => CurrentDirection;
 	}
 }

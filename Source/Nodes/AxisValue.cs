@@ -5,11 +5,11 @@ namespace Celeste.Mod.ProgrammaticInput.Nodes
 {
 	public abstract class AxisValue : VirtualAxis.Node
 	{
-		public float CurrentDecision;
+		public float CurrentValue;
 
-		public abstract Vector2 VectorDecision { set; }
+		public abstract Vector2 VectorValue { set; }
 
-		public override float Value => CurrentDecision;
+		public override float Value => CurrentValue;
 	}
 
 	/// <summary>
@@ -17,7 +17,7 @@ namespace Celeste.Mod.ProgrammaticInput.Nodes
 	/// </summary>
 	public class AxisXValue : AxisValue
 	{
-		public override Vector2 VectorDecision { set => CurrentDecision = value.X; }
+		public override Vector2 VectorValue { set => CurrentValue = value.X; }
 	}
 
 	/// <summary>
@@ -26,6 +26,6 @@ namespace Celeste.Mod.ProgrammaticInput.Nodes
 	/// </summary>
 	public class AxisYValue : AxisValue
 	{
-		public override Vector2 VectorDecision { set => CurrentDecision = value.Y; }
+		public override Vector2 VectorValue { set => CurrentValue = value.Y; }
 	}
 }

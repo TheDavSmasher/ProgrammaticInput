@@ -8,19 +8,19 @@ namespace Celeste.Mod.ProgrammaticInput.Nodes
 	/// </summary>
 	public class ButtonPress : VirtualButton.Node
 	{
-		private bool PreviousDecision;
+		private bool PreviousState;
 
-		public bool CurrentDecision;
+		public bool CurrentState;
 
-		public override bool Check => CurrentDecision;
+		public override bool Check => CurrentState;
 
-		public override bool Pressed => CurrentDecision && !PreviousDecision;
+		public override bool Pressed => CurrentState && !PreviousState;
 
-		public override bool Released => !CurrentDecision && PreviousDecision;
+		public override bool Released => !CurrentState && PreviousState;
 
 		public override void Update()
 		{
-			PreviousDecision = CurrentDecision;
+			PreviousState = CurrentState;
 		}
 	}
 }
