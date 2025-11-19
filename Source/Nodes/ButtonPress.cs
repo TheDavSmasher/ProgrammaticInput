@@ -23,6 +23,16 @@ namespace Celeste.Mod.ProgrammaticInput.Nodes
 			PreviousState = CurrentState;
 		}
 
+		public void Press()
+		{
+			CurrentState = true;
+		}
+
+		public void Release()
+		{
+			CurrentState = default;
+		}
+
 		public static implicit operator bool(ButtonPress b) => b.CurrentState;
 	}
 }

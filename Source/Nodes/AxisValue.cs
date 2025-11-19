@@ -11,6 +11,21 @@ namespace Celeste.Mod.ProgrammaticInput.Nodes
 
 		public override float Value => CurrentValue;
 
+		public void SetValue(float value)
+		{
+			CurrentValue = value;
+		}
+
+		public void SetValue(Vector2 value)
+		{
+			VectorValue = value;
+		}
+
+		public void SetNeutral()
+		{
+			CurrentValue = default;
+		}
+
 		public static implicit operator float(AxisValue a) => a.Value;
 	}
 
