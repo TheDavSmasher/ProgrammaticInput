@@ -57,29 +57,29 @@ public class ProgrammaticInputModule : EverestModule {
 	{
 		base.OnInputDeregister();
 
-		Input.ESC.Nodes.Remove(MenuBinds.ESC);
-		Input.Pause.Nodes.Remove(MenuBinds.Pause);
-		Input.MenuLeft.Nodes.Remove(MenuBinds.MenuLeft);
-		Input.MenuRight.Nodes.Remove(MenuBinds.MenuRight);
-		Input.MenuUp.Nodes.Remove(MenuBinds.MenuUp);
-		Input.MenuDown.Nodes.Remove(MenuBinds.MenuDown);
-		Input.MenuConfirm.Nodes.Remove(MenuBinds.MenuConfirm);
-		Input.MenuCancel.Nodes.Remove(MenuBinds.MenuCancel);
-		Input.MenuJournal.Nodes.Remove(MenuBinds.MenuJournal);
-		Input.QuickRestart.Nodes.Remove(MenuBinds.QuickRestart);
+		Input.ESC?.Nodes.Remove(MenuBinds.ESC);
+		Input.Pause?.Nodes.Remove(MenuBinds.Pause);
+		Input.MenuLeft?.Nodes.Remove(MenuBinds.MenuLeft);
+		Input.MenuRight?.Nodes.Remove(MenuBinds.MenuRight);
+		Input.MenuUp?.Nodes.Remove(MenuBinds.MenuUp);
+		Input.MenuDown?.Nodes.Remove(MenuBinds.MenuDown);
+		Input.MenuConfirm?.Nodes.Remove(MenuBinds.MenuConfirm);
+		Input.MenuCancel?.Nodes.Remove(MenuBinds.MenuCancel);
+		Input.MenuJournal?.Nodes.Remove(MenuBinds.MenuJournal);
+		Input.QuickRestart?.Nodes.Remove(MenuBinds.QuickRestart);
 
-		Input.MoveX.Nodes.Remove(GameplayBinds.MoveX);
-		Input.MoveY.Nodes.Remove(GameplayBinds.MoveY);
-		Input.GliderMoveY.Nodes.Remove(GameplayBinds.GliderMoveY);
+		Input.MoveX?.Nodes.Remove(GameplayBinds.MoveX);
+		Input.MoveY?.Nodes.Remove(GameplayBinds.MoveY);
+		Input.GliderMoveY?.Nodes.Remove(GameplayBinds.GliderMoveY);
 
-		Input.Aim.Nodes.Remove(GameplayBinds.Aim);
-		Input.Feather.Nodes.Remove(GameplayBinds.Feather);
-		Input.MountainAim.Nodes.Remove(MenuBinds.MountainAim);
+		Input.Aim?.Nodes.Remove(GameplayBinds.Aim);
+		Input.Feather?.Nodes.Remove(GameplayBinds.Feather);
+		Input.MountainAim?.Nodes.Remove(MenuBinds.MountainAim);
 
-		Input.Jump.Nodes.Remove(GameplayBinds.Jump);
-		Input.Dash.Nodes.Remove(GameplayBinds.Dash);
-		Input.Grab.Nodes.Remove(GameplayBinds.Grab);
-		Input.Talk.Nodes.Remove(GameplayBinds.Talk);
-		Input.CrouchDash.Nodes.Remove(GameplayBinds.CrouchDash);
+		Input.Jump?.Nodes.Remove(GameplayBinds.Jump);
+		Input.Dash?.Nodes.Remove(GameplayBinds.Dash);
+		Input.Grab?.Nodes.Remove(GameplayBinds.Grab);
+		Input.Talk?.Nodes.Remove(GameplayBinds.Talk);
+		Input.CrouchDash?.Nodes.Remove(GameplayBinds.CrouchDash);
 	}
 }
