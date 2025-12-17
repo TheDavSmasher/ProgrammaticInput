@@ -1,10 +1,11 @@
-﻿using System;
-using Celeste.Mod.ProgrammaticInput.Binds;
+﻿using Celeste.Mod.ProgrammaticInput.Binds;
+using System;
 
 namespace Celeste.Mod.ProgrammaticInput;
 
-public class ProgrammaticInputModule : EverestModule {
-    public static ProgrammaticInputModule Instance { get; private set; }
+public class ProgrammaticInputModule : EverestModule
+{
+	public static ProgrammaticInputModule Instance { get; private set; }
 
 	// Store Settings
 	public override Type SettingsType => typeof(ProgrammaticInputSettings);
@@ -14,23 +15,26 @@ public class ProgrammaticInputModule : EverestModule {
 	public override Type SessionType => typeof(ProgrammaticInputSession);
 	public static ProgrammaticInputSession Session => (ProgrammaticInputSession)Instance._Session;
 
-	public ProgrammaticInputModule() {
-        Instance = this;
+	public ProgrammaticInputModule()
+	{
+		Instance = this;
 #if DEBUG
-        // debug builds use verbose logging
-        Logger.SetLogLevel(nameof(ProgrammaticInputModule), LogLevel.Verbose);
+		// debug builds use verbose logging
+		Logger.SetLogLevel(nameof(ProgrammaticInputModule), LogLevel.Verbose);
 #else
         // release builds use info logging to reduce spam in log files
         Logger.SetLogLevel(nameof(ProgrammaticInputModule), LogLevel.Info);
 #endif
-    }
+	}
 
-    public override void Load() {
+	public override void Load()
+	{
 		Everest.Events.Level.OnLoadLevel += ResetOnLoad;
 		On.Celeste.Celeste.Update += Celeste_Update;
-    }
+	}
 
-	public override void Unload() {
+	public override void Unload()
+	{
 		Everest.Events.Level.OnLoadLevel -= ResetOnLoad;
 		On.Celeste.Celeste.Update -= Celeste_Update;
 	}
