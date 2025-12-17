@@ -23,10 +23,12 @@ public class ProgrammaticInputModule : EverestModule {
 
     public override void Load() {
 		Everest.Events.Level.OnLoadLevel += ResetOnLoad;
+		On.Celeste.Celeste.Update += Celeste_Update;
     }
 
 	public override void Unload() {
 		Everest.Events.Level.OnLoadLevel -= ResetOnLoad;
+		On.Celeste.Celeste.Update -= Celeste_Update;
 	}
 
 	private static void ResetOnLoad(Level level, Player.IntroTypes playerIntro, bool isFromLoader)
@@ -35,6 +37,17 @@ public class ProgrammaticInputModule : EverestModule {
 			return;
 
 		ResetInput();
+	}
+
+	private void Celeste_Update(On.Celeste.Celeste.orig_Update orig, Celeste self, Microsoft.Xna.Framework.GameTime gameTime)
+	{
+		if (Settings.InputResetBind.Pressed)
+		{
+			Settings.InputResetBind.ConsumePress();
+			ResetInput();
+		}
+
+		orig(self, gameTime);
 	}
 
 	private static void ResetInput()
