@@ -10,6 +10,10 @@ public class ProgrammaticInputModule : EverestModule {
 	public override Type SettingsType => typeof(ProgrammaticInputSettings);
 	public static ProgrammaticInputSettings Settings => (ProgrammaticInputSettings)Instance._Settings;
 
+	// Store Session
+	public override Type SessionType => typeof(ProgrammaticInputSession);
+	public static ProgrammaticInputSession Session => (ProgrammaticInputSession)Instance._Session;
+
 	public ProgrammaticInputModule() {
         Instance = this;
 #if DEBUG
