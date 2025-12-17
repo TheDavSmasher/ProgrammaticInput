@@ -6,7 +6,11 @@ namespace Celeste.Mod.ProgrammaticInput;
 public class ProgrammaticInputModule : EverestModule {
     public static ProgrammaticInputModule Instance { get; private set; }
 
-    public ProgrammaticInputModule() {
+	// Store Settings
+	public override Type SettingsType => typeof(ProgrammaticInputSettings);
+	public static ProgrammaticInputSettings Settings => (ProgrammaticInputSettings)Instance._Settings;
+
+	public ProgrammaticInputModule() {
         Instance = this;
 #if DEBUG
         // debug builds use verbose logging
