@@ -43,7 +43,7 @@ namespace Celeste.Mod.ProgrammaticInput.Nodes
 
 		public void AutoHoldPress(float? time = null)
 		{
-			Engine.Scene.Tracker.GetEntity<Player>().Add(new Coroutine(HoldPress(time)));
+			NodeExts.HoldInput(HoldPress(time));
 		}
 
 		public static implicit operator bool(ButtonPress b) => b.CurrentState;

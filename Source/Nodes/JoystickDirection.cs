@@ -33,7 +33,7 @@ namespace Celeste.Mod.ProgrammaticInput.Nodes
 
 		public void AutoHoldDirection(Vector2 value, float? time = null)
 		{
-			Engine.Scene.Tracker.GetEntity<Player>().Add(new Coroutine(HoldDirection(value, time)));
+			NodeExts.HoldInput(HoldDirection(value, time));
 		}
 
 		public static implicit operator Vector2(JoystickDirection j) => j.Value;
