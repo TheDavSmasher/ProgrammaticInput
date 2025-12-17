@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace Celeste.Mod.ProgrammaticInput.Nodes
 {
-	internal class NodeExts
+	internal static class NodeExts
 	{
 		public static void HoldInput(IEnumerator input)
 		{
