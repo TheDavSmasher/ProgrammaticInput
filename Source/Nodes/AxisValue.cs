@@ -1,5 +1,6 @@
 ﻿using Monocle;
 using Microsoft.Xna.Framework;
+using System.Collections;
 
 namespace Celeste.Mod.ProgrammaticInput.Nodes
 {
@@ -24,6 +25,30 @@ namespace Celeste.Mod.ProgrammaticInput.Nodes
 		public void SetNeutral()
 		{
 			CurrentValue = default;
+		}
+
+		public IEnumerator HoldValue(float value, float? time = null)
+		{
+			SetValue(value);
+			yield return time;
+			SetNeutral();
+		}
+
+		public IEnumerator HoldValue(Vector2 value, float? time = null)
+		{
+			SetValue(value);
+			yield return time;
+			SetNeutral();
+		}
+
+		public void AutoHoldValue(float value, float? time = null)
+		{
+			Engine.Scene.Tracker.GetEntity<Player>().Add(new Coroutine(HoldValue(value, time)));
+		}
+
+		public void AutoHoldValue(Vector2 value, float? time = null)
+		{
+			Engine.Scene.Tracker.GetEntity<Player>().Add(new Coroutine(HoldValue(value, time)));
 		}
 
 		public static implicit operator float(AxisValue a) => a.Value;

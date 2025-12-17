@@ -1,5 +1,6 @@
 ﻿using Monocle;
 using Microsoft.Xna.Framework;
+using System.Collections;
 
 namespace Celeste.Mod.ProgrammaticInput.Nodes
 {
@@ -21,6 +22,18 @@ namespace Celeste.Mod.ProgrammaticInput.Nodes
 		public void SetNeutral()
 		{
 			CurrentDirection = default;
+		}
+
+		public IEnumerator HoldDirection(Vector2 value, float? time = null)
+		{
+			SetDirection(value);
+			yield return time;
+			SetNeutral();
+		}
+
+		public void AutoHoldDirection(Vector2 value, float? time = null)
+		{
+			Engine.Scene.Tracker.GetEntity<Player>().Add(new Coroutine(HoldDirection(value, time)));
 		}
 
 		public static implicit operator Vector2(JoystickDirection j) => j.Value;

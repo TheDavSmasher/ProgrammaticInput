@@ -1,4 +1,5 @@
 ﻿using Monocle;
+using System.Collections;
 
 namespace Celeste.Mod.ProgrammaticInput.Nodes
 {
@@ -31,6 +32,18 @@ namespace Celeste.Mod.ProgrammaticInput.Nodes
 		public void Release()
 		{
 			CurrentState = default;
+		}
+
+		public IEnumerator HoldPress(float? time = null)
+		{
+			Press();
+			yield return time;
+			Release();
+		}
+
+		public void AutoHoldPress(float? time = null)
+		{
+			Engine.Scene.Tracker.GetEntity<Player>().Add(new Coroutine(HoldPress(time)));
 		}
 
 		public static implicit operator bool(ButtonPress b) => b.CurrentState;
