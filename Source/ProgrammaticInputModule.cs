@@ -22,10 +22,43 @@ public class ProgrammaticInputModule : EverestModule {
     }
 
     public override void Load() {
+		Everest.Events.Level.OnLoadLevel += ResetOnLoad;
     }
-	
-    public override void Unload() {
-    }
+
+	public override void Unload() {
+		Everest.Events.Level.OnLoadLevel -= ResetOnLoad;
+	}
+
+	private void ResetOnLoad(Level level, Player.IntroTypes playerIntro, bool isFromLoader)
+	{
+		if (!Settings.ResetOnLevelLoad)
+			return;
+
+		MenuBinds.ESC.Release();
+		MenuBinds.Pause.Release();
+		MenuBinds.MenuLeft.Release();
+		MenuBinds.MenuRight.Release();
+		MenuBinds.MenuUp.Release();
+		MenuBinds.MenuDown.Release();
+		MenuBinds.MenuConfirm.Release();
+		MenuBinds.MenuCancel.Release();
+		MenuBinds.MenuJournal.Release();
+		MenuBinds.QuickRestart.Release();
+
+		GameplayBinds.MoveX.SetNeutral();
+		GameplayBinds.MoveY.SetNeutral();
+		GameplayBinds.GliderMoveY.SetNeutral();
+
+		GameplayBinds.Aim.SetNeutral();
+		GameplayBinds.Feather.SetNeutral();
+		MenuBinds.MountainAim.SetNeutral();
+
+		GameplayBinds.Jump.Release();
+		GameplayBinds.Dash.Release();
+		GameplayBinds.Grab.Release();
+		GameplayBinds.Talk.Release();
+		GameplayBinds.CrouchDash.Release();
+	}
 
 	public override void OnInputInitialize()
 	{
