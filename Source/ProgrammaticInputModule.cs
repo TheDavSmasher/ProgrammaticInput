@@ -45,7 +45,7 @@ public class ProgrammaticInputModule : EverestModule {
 
 	private void Celeste_Update(On.Celeste.Celeste.orig_Update orig, Celeste self, Microsoft.Xna.Framework.GameTime gameTime)
 	{
-		if (Settings.InputResetBind.Pressed)
+		if (Settings.InputResetBind.Pressed && !Session.BlockInGameInputReset)
 		{
 			Settings.InputResetBind.ConsumePress();
 			ResetInput();
