@@ -29,7 +29,7 @@ public class ProgrammaticInputModule : EverestModule {
 		Everest.Events.Level.OnLoadLevel -= ResetOnLoad;
 	}
 
-	private void ResetOnLoad(Level level, Player.IntroTypes playerIntro, bool isFromLoader)
+	private static void ResetOnLoad(Level level, Player.IntroTypes playerIntro, bool isFromLoader)
 	{
 		if (!Settings.ResetOnLevelLoad)
 			return;
