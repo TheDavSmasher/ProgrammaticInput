@@ -33,7 +33,7 @@ namespace Celeste.Mod.ProgrammaticInput.Nodes
 
 		public void AutoHoldDirection(Vector2 value, float? time = null)
 		{
-			NodeExts.HoldInput(HoldDirection(value, time));
+			ProgrammaticNodes.HoldInput(HoldDirection(value, time));
 		}
 
 		public static implicit operator Vector2(JoystickDirection j) => j.Value;

@@ -43,12 +43,12 @@ namespace Celeste.Mod.ProgrammaticInput.Nodes
 
 		public void AutoHoldValue(float value, float? time = null)
 		{
-			NodeExts.HoldInput(HoldValue(value, time));
+			ProgrammaticNodes.HoldInput(HoldValue(value, time));
 		}
 
 		public void AutoHoldValue(Vector2 value, float? time = null)
 		{
-			NodeExts.HoldInput(HoldValue(value, time));
+			ProgrammaticNodes.HoldInput(HoldValue(value, time));
 		}
 
 		public static implicit operator float(AxisValue a) => a.Value;
