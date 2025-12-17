@@ -34,6 +34,11 @@ public class ProgrammaticInputModule : EverestModule {
 		if (!Settings.ResetOnLevelLoad)
 			return;
 
+		ResetInput();
+	}
+
+	private static void ResetInput()
+	{
 		MenuBinds.ESC.Release();
 		MenuBinds.Pause.Release();
 		MenuBinds.MenuLeft.Release();
