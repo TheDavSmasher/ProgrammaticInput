@@ -9,6 +9,8 @@ namespace Celeste.Mod.ProgrammaticInput.Nodes
 	/// </summary>
 	public class ButtonPress : VirtualButton.Node
 	{
+		private bool changeState;
+
 		private bool PreviousState;
 
 		public bool CurrentState;
@@ -21,7 +23,8 @@ namespace Celeste.Mod.ProgrammaticInput.Nodes
 
 		public override void Update()
 		{
-			PreviousState = CurrentState;
+			PreviousState = changeState;
+			changeState = CurrentState;
 		}
 
 		public void Press()
