@@ -4,11 +4,11 @@ namespace Celeste.Mod.ProgrammaticInput.Binds
 {
 	public static class GameplayBinds
 	{
-		public static readonly AxisXValue MoveX = new();
+		public static readonly AxisValue MoveX = new();
 
-		public static readonly AxisYValue MoveY = new();
+		public static readonly AxisValue MoveY = new();
 
-		public static readonly AxisYValue GliderMoveY = new();
+		public static readonly AxisValue GliderMoveY = new();
 
 
 
