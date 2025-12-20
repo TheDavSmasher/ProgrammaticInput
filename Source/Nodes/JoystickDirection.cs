@@ -12,7 +12,7 @@ namespace Celeste.Mod.ProgrammaticInput.Nodes
 	{
 		public Vector2 CurrentDirection;
 
-		public override Vector2 Value => CurrentDirection;
+		public override Vector2 Value => Calc.Clamp(CurrentDirection, -1, -1, 1, 1);
 
 		public void SetDirection(Vector2 value)
 		{

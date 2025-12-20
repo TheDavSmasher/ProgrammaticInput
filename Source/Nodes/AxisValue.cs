@@ -11,7 +11,7 @@ namespace Celeste.Mod.ProgrammaticInput.Nodes
 	{
 		public float CurrentValue;
 
-		public override float Value => CurrentValue;
+		public override float Value => Calc.Clamp(CurrentValue, -1, 1);
 
 		public void SetValue(float value)
 		{
